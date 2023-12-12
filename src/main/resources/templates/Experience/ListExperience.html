@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$Title$</title>
+</head>
+<body>
+    <h1>List Experience</h1>
+    <table border="1", width="30%">
+        <tr>
+            <th>ID</th>
+            <th>From Date</th>
+            <th>To Date</th>
+            <th>Word Description</th>
+            <th>Company Name</th>
+            <th>Role</th>
+        </tr>
+        <tr th:each="experiences : ${ExperienceDatil}">
+            <td th:text="${experiences.id}"></td>
+            <td th:text="${experiences.fromDate}"></td>
+            <td th:text="${experiences.toDate}"></td>
+            <td th:text="${experiences.workDescription}"></td>
+            <td th:text="${experiences.companyName}"></td>
+            <td th:text="${experiences.roles}"></td>
+        </tr>
+    </table>
+<!--    <tr th:each="candidate : ${candidatePage}">-->
+<!--        <td th:text="${candidate.id}"></td>-->
+<!--        <td ><a th:href="@{/candidates/{id} (id=${candidate.id})}">View</a>  </td>-->
+<!--        &lt;!&ndash;            <td th:text="${candidate.fullName}"></td>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <td th:text="${candidate.email}"></td>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <td th:text="${candidate.phone}"></td>&ndash;&gt;-->
+<!--        <td>-->
+<!--            <button>Delete</button>-->
+<!--            <button>Update</button>-->
+<!--        </td>-->
+
+<!--    </tr>-->
+</body>
+</html>

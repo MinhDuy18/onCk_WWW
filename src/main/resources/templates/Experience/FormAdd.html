@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>FROM ADD</h1>
+<form th:action ="@{/experiences/add}" th:object="${FormADDExperience}" method="post">
+    <label for="id">ID:</label><br>
+    <input type="text" id="id" name="id" th:field="*{id}"><br><br>
+
+    <label for="fromDate">From Date</label><br>
+    <input type="date" id="fromDate" name="fromDate" th:field="*{fromDate}"><br><br>
+
+    <label for="toDate">Email:</label><br>
+    <input type="date" id="toDate" name="toDate" th:field="*{toDate}"><br><br>
+
+    <label for="wordDescription">Word Description:</label><br>
+    <input type="text" id="wordDescription" name="wordDescription" th:field="*{workDescription}"><br><br>
+
+    <label for="companyName">Company Name:</label><br>
+    <input type="text" id="companyName" name="companyName" th:field="*{companyName}"><br><br>
+
+    <label>Role:</label>
+    <select th:field="*{roles}">
+        <option th:each="role :${RoleList}"  th:value="${role}" th:text="${role}" >
+        </option>
+    </select><br>
+
+    <label>Candidate:</label>
+    <select th:field="*{candidate}">
+        <option th:each="can : ${CandidateList}" th:value="${can.id}" th:text="${can.id}">
+        </option>
+    </select>
+
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

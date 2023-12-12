@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1> List candidate </h1>
+    <table border="1", width="30%" >
+        <tr>
+            <th>ID </th>
+            <th>View Detail</th>
+            <th>Actions</th>
+
+
+        </tr>
+        <tr th:each="candidate : ${candidatePage}">
+            <td th:text="${candidate.id}"></td>
+            <td ><a th:href="@{/candidates/{id} (id=${candidate.id})}">View</a></td>
+<!--            <td th:text="${candidate.fullName}"></td>-->
+<!--            <td th:text="${candidate.email}"></td>-->
+<!--            <td th:text="${candidate.phone}"></td>-->
+            <td>
+                <a th:href="@{/cadidates/delete/{id} (id=${candidate.id})}">Delete</a>
+               <a th:href="@{/candidates/update/{id} (id=${candidate.id})}">Update</a>
+            </td>
+
+        </tr>
+    </table>
+    <a href="/candidates/showformadd">ADD</a>
+
+</body>
+</html>
